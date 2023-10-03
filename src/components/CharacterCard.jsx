@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 export const CharacterCard = ({ name, image, status, species, gender, decrement, increment }) => {
     return (
         <div className="card card-container">
@@ -14,5 +14,15 @@ export const CharacterCard = ({ name, image, status, species, gender, decrement,
                 </div>
             </div>
         </div>
-    )
+    );
+};
+
+CharacterCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    species: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    decrement: PropTypes.func.isRequired,
+    increment: PropTypes.func.isRequired,
 }
