@@ -1,6 +1,4 @@
-import { useCounter } from "../hooks/useCounter";
-import { useFetch } from "../hooks/useFetch"
-
+import { useCounter, useFetch } from "../hooks";
 
 export const MultipleCustomHooks = () => {
 
@@ -9,9 +7,6 @@ export const MultipleCustomHooks = () => {
     const { data, isLoading, hasError } = useFetch(`https://rickandmortyapi.com/api/character/${counter}`);
 
     const { name, image, status, species, gender } = !!data && data;
-
-    // console.log({ data, isLoading, hasError });
-    console.log(counter);
 
     return (
         <>
@@ -27,7 +22,7 @@ export const MultipleCustomHooks = () => {
                     <img src={image} className="card-img-top" alt={name} />
                     <div className="card-body">
                         <h4 className="card-title text-center">{name}</h4>
-                        <p className="card-text text-center">{status}</p>
+                        <p className="card-text text-center">Status: {status}</p>
                         <p className="card-text text-center">{species}</p>
                         <p className="card-text text-center">{gender}</p>
                         <div className="d-flex buttons-container">
