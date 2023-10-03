@@ -1,4 +1,4 @@
-import { CharacterCard } from "../components/CharacterCard";
+import { CharacterCard } from "./CharacterCard";
 import { useCounter, useFetch } from "../hooks";
 
 export const MultipleCustomHooks = () => {
