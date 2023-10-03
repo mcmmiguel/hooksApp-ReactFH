@@ -5,3 +5,18 @@ body {
 button {
     margin-right: 5px;
 }
+
+img {
+    height: 300px;
+    object-fit: contain;
+}
+
+.card-container {
+    max-width: 40%;
+    max-height: 350px;
+    margin: 0 auto;
+}
+
+.buttons-container {
+    justify-content: space-between;
+}
