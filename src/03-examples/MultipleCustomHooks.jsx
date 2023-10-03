@@ -16,8 +16,6 @@ export const MultipleCustomHooks = () => {
 
             {isLoading ? (
                 <div className="alert alert-info text-center">Cargando...</div>
-            ) : hasError ? (
-                <div className="alert alert-danger text-center">Hubo un error al cargar los datos.</div>
             ) : (
                 <CharacterCard
                     name={name}
