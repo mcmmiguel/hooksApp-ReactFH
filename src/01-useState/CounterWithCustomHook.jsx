@@ -2,7 +2,7 @@ import { useCounter } from "../hooks/useCounter"
 
 export const CounterWithCustomHook = () => {
 
-    const { counter } = useCounter();
+    const { counter, increment, decrement, restart } = useCounter();
 
     return (
         <>
@@ -10,10 +10,13 @@ export const CounterWithCustomHook = () => {
 
             <hr />
 
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={decrement}>
                 -1
             </button>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={restart}>
+                Reset
+            </button>
+            <button className="btn btn-primary" onClick={increment}>
                 +1
             </button>
         </>
