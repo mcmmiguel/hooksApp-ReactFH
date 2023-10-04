@@ -41,6 +41,13 @@ export const ToDoApp = () => {
         });
     };
 
+    const handleToggleToDo = (id) => {
+        dispatch({
+            type: '[TODO] Toggle ToDo',
+            payload: id,
+        });
+    };
+
 
     return (
         <>
@@ -50,7 +57,11 @@ export const ToDoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <ToDoList todos={todos} onDeleteToDo={handleDeleteToDo} />
+                    <ToDoList
+                        todos={todos}
+                        onDeleteToDo={handleDeleteToDo}
+                        onToggleToDo={handleToggleToDo}
+                    />
                 </div>
 
                 <div className="col-5">
