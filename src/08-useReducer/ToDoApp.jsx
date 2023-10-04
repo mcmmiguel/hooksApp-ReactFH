@@ -1,6 +1,5 @@
 import { useReducer } from "react"
 import { toDoReducer } from "./ToDoReducer"
-import { ToDoItem } from "./ToDoItem";
 import { ToDoList } from "./ToDoList";
 import { ToDoAdd } from "./ToDoAdd";
 
@@ -22,8 +21,14 @@ export const ToDoApp = () => {
     const [todos, dispatch] = useReducer(toDoReducer, initialState)
 
     const handleNewToDo = (todo) => {
-        console.log(todo);
-    }
+        const action = {
+            type: '[TODO] Add ToDo',
+            payload: todo,
+        };
+
+        dispatch(action);
+    };
+
 
     return (
         <>
