@@ -1,24 +1,30 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { toDoReducer } from "./ToDoReducer"
 import { ToDoList } from "./ToDoList";
 import { ToDoAdd } from "./ToDoAdd";
 
 const initialState = [
-    {
-        id: new Date().getTime(),
-        description: 'Recolectar la gema del alma',
-        done: false,
-    },
-    {
-        id: new Date().getTime() + 100,
-        description: 'Recolectar la gema de la realidad',
-        done: false,
-    },
+    // {
+    //     id: new Date().getTime(),
+    //     description: 'Recolectar la gema del alma',
+    //     done: false,
+    // },
+
 ];
+
+const init = () => {
+    return JSON.parse(localStorage.getItem('todos')) || [];
+}
 
 export const ToDoApp = () => {
 
-    const [todos, dispatch] = useReducer(toDoReducer, initialState)
+    const [todos, dispatch] = useReducer(toDoReducer, initialState, init);
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos) || []);
+
+    }, [todos])
+
 
     const handleNewToDo = (todo) => {
         const action = {
