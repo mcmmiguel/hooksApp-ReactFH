@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { NavBar } from "./NavBar";
 
 
 export const MainApp = () => {
@@ -8,9 +9,7 @@ export const MainApp = () => {
     return (
         <>
             <h1>Main App</h1>
-            <Link to='/'>Home</Link>
-            <Link to='about'>About</Link>
-            <Link to='login'>Login</Link>
+            <NavBar />
 
             <hr />
 
