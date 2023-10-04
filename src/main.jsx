@@ -14,10 +14,11 @@ import './index.css'
 // import { Layout } from './05-useLayoutEffect/Layout'
 // import { Memorize } from './06-memos/Memorize'
 // import './08-useReducer/intro-reducer'
-import { ToDoApp } from './08-useReducer/TODOApp'
+// import { ToDoApp } from './08-useReducer/TODOApp'
+import { MainApp } from './09-useContext/MainApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <ToDoApp />
+  <MainApp />
   // </React.StrictMode>,
 )
