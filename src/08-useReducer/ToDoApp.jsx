@@ -21,8 +21,7 @@ export const ToDoApp = () => {
     const [todos, dispatch] = useReducer(toDoReducer, initialState, init);
 
     useEffect(() => {
-        localStorage.setItem('todos', JSON.stringify(todos) || []);
-
+        localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos])
 
 
@@ -35,6 +34,13 @@ export const ToDoApp = () => {
         dispatch(action);
     };
 
+    const handleDeleteToDo = (id) => {
+        dispatch({
+            type: '[TODO] Remove ToDo',
+            payload: id,
+        });
+    };
+
 
     return (
         <>
@@ -44,7 +50,7 @@ export const ToDoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <ToDoList todos={todos} />
+                    <ToDoList todos={todos} onDeleteToDo={handleDeleteToDo} />
                 </div>
 
                 <div className="col-5">

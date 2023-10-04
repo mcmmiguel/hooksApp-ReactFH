@@ -6,8 +6,9 @@ export const toDoReducer = (initialState = [], action) => {
             return [
                 ...initialState,
                 action.payload,
-            ]
-
+            ];
+        case '[TODO] Remove ToDo':
+            return initialState.filter((todo) => todo.id !== action.payload);
 
         default:
             return initialState;
