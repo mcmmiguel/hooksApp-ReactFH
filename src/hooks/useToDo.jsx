@@ -45,10 +45,15 @@ export const useToDo = () => {
         });
     };
 
+    const todosCount = todos.length;
+    const todosPending = todos.filter(todo => !todo.done).length;
+
     return {
         todos,
         handleNewToDo,
         handleDeleteToDo,
         handleToggleToDo,
+        todosCount,
+        todosPending,
     }
 }

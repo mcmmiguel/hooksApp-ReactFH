@@ -1,17 +1,17 @@
 import { ToDoList } from "./ToDoList";
 import { ToDoAdd } from "./ToDoAdd";
-import { useToDo } from "../hooks/useToDo";
+import { useToDo } from "../hooks";
 
 
 
 export const ToDoApp = () => {
 
-    const { todos, handleNewToDo, handleDeleteToDo, handleToggleToDo } = useToDo();
+    const { todos, todosCount, todosPending, handleNewToDo, handleDeleteToDo, handleToggleToDo } = useToDo();
 
     return (
         <>
 
-            <h1>ToDo App: 10, <small>pendientes: 2</small> </h1>
+            <h1>ToDo App: {todosCount}, <small>pendientes: {todosPending}</small> </h1>
             <hr />
 
             <div className="row">
