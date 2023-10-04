@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 
 
 export const MainApp = () => {
@@ -8,6 +9,9 @@ export const MainApp = () => {
         <>
             <h1>Main App</h1>
             <hr />
+
+            {/* Para usar como layout de las rutas children  */}
+            <Outlet />
 
         </>
     )

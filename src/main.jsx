@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 // import { Padre } from './07-tarea-memo/Padre'
@@ -15,18 +15,12 @@ import './index.css'
 // import { Memorize } from './06-memos/Memorize'
 // import './08-useReducer/intro-reducer'
 // import { ToDoApp } from './08-useReducer/TODOApp'
-import { MainApp } from './09-useContext/MainApp'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+// import { MainApp } from './09-useContext/MainApp'
+import { RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainApp />,
-  },
-]);
+import { getRoutes } from './Routes';
+
+const router = getRoutes();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
