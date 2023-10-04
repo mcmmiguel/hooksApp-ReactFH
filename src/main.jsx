@@ -16,9 +16,20 @@ import './index.css'
 // import './08-useReducer/intro-reducer'
 // import { ToDoApp } from './08-useReducer/TODOApp'
 import { MainApp } from './09-useContext/MainApp'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainApp />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <MainApp />
+  <RouterProvider router={router} />
   // </React.StrictMode>,
 )
