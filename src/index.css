@@ -20,3 +20,7 @@ img {
 .buttons-container {
     justify-content: space-between;
 }
+
+a {
+    margin-right: 1rem;
+}
