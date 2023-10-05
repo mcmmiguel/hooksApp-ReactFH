@@ -1,14 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import { UserProvider } from "./context/UserProvider";
 
 
 export const MainApp = () => {
 
-    console.log('Hla soy MAin');
-
     return (
-        <>
-            <h1>Main App</h1>
+        <UserProvider>
+            {/* <h1>Main App</h1> */}
             <NavBar />
 
             <hr />
@@ -16,6 +15,6 @@ export const MainApp = () => {
             <Outlet />
             {/* Para usar como layout de las rutas children  */}
 
-        </>
+        </UserProvider>
     )
 }
