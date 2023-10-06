@@ -19,6 +19,20 @@ describe('Pruebas en <MainApp />', () => {
 
     });
 
+    test('Debe de mostrar el LoginPage', () => {
+
+        const router = createMemoryRouter(getRoutes, { initialEntries: ['/login'], });
+
+        render(<RouterProvider router={router} />);
+
+        const head = screen.getByRole('heading', { level: 1 }).innerHTML;
+
+        // screen.debug();
+
+        expect(head).toContain('Login Page');
+
+    });
+
 
 
 });
