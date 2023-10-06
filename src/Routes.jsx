@@ -1,7 +1,7 @@
-import { createBrowserRouter, } from "react-router-dom";
+// import { createBrowserRouter, } from "react-router-dom";
 import { AboutPage, LoginPage, HomePage, MainApp } from './09-useContext';
 
-export const getRoutes = () => createBrowserRouter([
+export const getRoutes = [
     {
         path: "/",
         element: <MainApp />,
@@ -20,4 +20,4 @@ export const getRoutes = () => createBrowserRouter([
             }
         ]
     }
-]);
+];
