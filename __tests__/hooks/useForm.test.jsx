@@ -1,4 +1,4 @@
-import { act, fireEvent, renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { useForm } from '../../src/hooks/useForm';
 
 describe('Pruebas en useForm', () => {
